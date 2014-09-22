@@ -96,18 +96,18 @@ class Game
     newplayers = []
     @players.shuffle!
     
-    excess = nil
+    excesses = []
     @setup.each do |role, count|
       if count.respond_to? :times
         count.times do
           newplayers << assign(@players.shift, role)
         end
       elsif count == :excess
-        excess = role
+        excesses << role
       end
     end
-    if excess
-      newplayers.push(*@players.map { |p| assign(p, excess) })
+    if excesses.size > 0
+      newplayers.push(*@players.map { |p| assign(p, excesses.sample) })
     end
     @players = newplayers
   end
