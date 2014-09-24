@@ -1,17 +1,16 @@
-## MAFIA
+## Mafia
 
-### What is it?
+### Description
 
-This program simulates a simple version of the party game [Mafia][1]
+This program simulates a simple version of the party game [Mafia](http://en.wikipedia.org/wiki/mafia_(party_game))
 This game is strictly multiplayer and needs at least 5-6 players to have
 a meaningful game.
 
- [0]: http://en.wikipedia.org/wiki/mafia_(party_game) 
-
 The game is played through sockets. You can connect to the server with
-the 'telnet' command or the WebSocket layer with the HTML5 client included
-with the server. When the terminal opens in the browser, type "connect <ip>
-<port>" to connect to the server.
+the `telnet` command or the WebSocket layer with the HTML5 client included
+with the server. When the terminal opens in the browser, type `connect <ip>
+<port>` to connect to the server. This client can be found in the `client`
+directory.
 
 ### Dependencies, configuration, and running
 
@@ -47,7 +46,7 @@ the setup is configured as the hash
 
 then the game will assign 2 players the Mafia role, 1 player the Cop role, and
 any more players that join the Villager role. Note that you can have multiple
-`:excess` roles.
+`:excess` roles. Extra players will be assigned to them randomly.
 
 The setup can be changed by the host before the game starts with the `set` command
 and can be viewed by anyone with the `setup` command.
