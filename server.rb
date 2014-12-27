@@ -1,4 +1,6 @@
 
+# encoding: utf-8
+
 require './game.rb'
 require './doctor.rb'
 require './color.rb'
