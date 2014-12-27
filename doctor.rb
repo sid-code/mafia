@@ -20,10 +20,15 @@ end
 
 # What happens when the action is performed
 Night::ACTIONS[:save] = proc do |saver, savee|
+  # This block is run in the context of the current night.
+  # @player_status is how the night keeps track of what the
+  # players have done
   @player_status[saver] ||= {}
 
   unless @player_status[saver][:who_to_save] # This should only be activated once
     at_death do |player, cause|
+
+      # Check if this player has been saved
       if player == @player_status[saver][:who_to_save]
         next :override # this player has been saved!
       end

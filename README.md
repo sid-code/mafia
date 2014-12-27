@@ -14,7 +14,7 @@ directory.
 
 ### Dependencies, configuration, and running
 
-This game requires the gems `eventmachine` and `em-websockets` to run.
+This game requires the gems `eventmachine` and `em-websocket` to run.
 
 Once these gems are installed, open `config.rb` to configure the server.
 (see section on setup if the `setup` key doesn't make sense)
@@ -50,3 +50,16 @@ any more players that join the Villager role. Note that you can have multiple
 
 The setup can be changed by the host before the game starts with the `set` command
 and can be viewed by anyone with the `setup` command.
+
+### doctor.rb
+
+`doctor.rb` is a file containing the doctor role in its entirety. It serves as
+an example of an added role - if the role is simple enough, no internal 
+modification is necessary to add it.
+
+### HTML5 client
+
+The HTML5 client uses the WebSocket API to connect to the server. The only
+requirement is a modern browser.
+
+It uses [jQuery](http://jquery.com/) and [jQuery terminal emulator](http://terminal.jcubic.pl/).
