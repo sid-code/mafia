@@ -52,7 +52,12 @@ class MafiaServer < EM::Connection
   
   def receive_data(data)
     @command ||= ""
-    data = strip_subch(data)
+    begin
+      data = strip_subch(data)
+    rescue Encoding::CompatibilityError
+      puts "Received malformed input, aborting."
+      return
+    end
     data.each_byte do |byte|
       cb = byte.chr
       
