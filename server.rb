@@ -31,7 +31,7 @@ class MafiaServer < EM::Connection
     DONT = "\xFE"
     
     # Why this has to be like this is beyond me
-    C_REGEX = /\u00FF.{2}/
+    C_REGEX = /${IAC}.{2}/
     
   end
   
