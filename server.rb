@@ -504,8 +504,6 @@ EM.run do
   puts "Server started at #{ip}:#{port}"
   
   EM::WebSocket.start(:host => ip, :port => 8000) do |ws|
-    connection = nil
-    
     ws.onopen {
       puts 'Someone has connected to the WebSocket'
       
