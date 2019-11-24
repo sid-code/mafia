@@ -15,7 +15,7 @@ class MafiaServer < EM::Connection
   }
   
   def minplayers
-    @@config[:setup].map { |(role, count)| count == :excess ? 1 : count }.reduce(:+)
+    @@config[:setup].map { |(_, count)| count == :excess ? 1 : count }.reduce(:+)
   end
   
   @@clients = []
